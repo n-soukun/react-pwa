@@ -17,7 +17,7 @@ function App() {
   return (
     <div className='min-h-screen bg-slate-50'>
       <header className='sticky top-0 left-0 z-50 flex gap-4 items-center p-4 text-xl text-slate-800 bg-white border-b border-slate-200'>
-        <img src={`${process.env.PUBLIC_URL}/img/logo.svg`} className=' w-6 h-6'/> iU Launcher
+        <img src={`${process.env.PUBLIC_URL}/img/logo.svg`} alt='ロゴ' className=' w-6 h-6'/> iU Launcher
       </header>
       <div>
         <SideAppBar data={sideAppBarData}/>
@@ -31,7 +31,8 @@ function App() {
             url="https://classroom.google.com/"
             icon={`${process.env.PUBLIC_URL}/img/classroom-icon.png`}
             screenshot={`${process.env.PUBLIC_URL}/img/classroom-sc.png`}
-            name="Google Classroom"/>
+            name="Google Classroom"
+            blank={true}/>
         </div>
       </div>
     </div>
