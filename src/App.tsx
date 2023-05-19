@@ -5,15 +5,18 @@ function App() {
 
   const sideAppBarData = [
     {
-      url: "https://iu-people.slack.com",
+      url: "slack://open",
+      blank: false,
       img: `${process.env.PUBLIC_URL}/img/slack-icon.svg`
     },
     {
       url: "https://gmail.com",
+      blank: true,
       img: `${process.env.PUBLIC_URL}/img/gmail-icon.svg`
     }
   ]
 
+  console.log(window.innerWidth)
   return (
     <div className='min-h-screen bg-slate-50'>
       <header className='sticky top-0 left-0 z-50 flex gap-4 items-center p-4 text-xl text-slate-800 bg-white border-b border-slate-200'>
@@ -23,7 +26,7 @@ function App() {
         <SideAppBar data={sideAppBarData}/>
         <div className='grid grid-cols-1 auto-rows-min gap-2 p-4 sm:ml-16 md:grid-cols-2 xl:grid-cols-3'>
           <BigBookmark 
-            url="https://unipa.i-u.ac.jp/uprx/"
+            url={window.innerWidth > 640 ? "https://unipa.i-u.ac.jp/uprx/" : "https://unipa.i-u.ac.jp/uprx/pk/pky501/Pky50101.xhtml"}
             icon={`${process.env.PUBLIC_URL}/img/logo.svg`}
             screenshot={`${process.env.PUBLIC_URL}/img/unipa-sc.png`}
             name="Unipa iU"/>
