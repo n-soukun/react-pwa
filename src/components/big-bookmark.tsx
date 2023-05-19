@@ -7,7 +7,7 @@ interface Props {
 
 const BigBookmark: React.FC<Props> = (props)=>{
     return (
-        <a href={props.url} target='_blank' className="block transition relative w-full max-w-md h-auto hover:shadow-xl hover:shadow-slate-300">
+        <a href={props.url} target='_blank' className="block transition relative w-full h-auto rounded overflow-hidden hover:shadow-xl hover:shadow-slate-300">
             <img src={props.screenshot} alt="" className='w-full h-auto' />
             <div className='absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/0 to-black/50'>
                 <div className=' absolute left-4 bottom-4 flex items-center gap-2 text-white'>

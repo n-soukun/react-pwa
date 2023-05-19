@@ -1,23 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
 import BigBookmark from './components/big-bookmark';
+import SideAppBar from './components/SideAppBar';
 
 function App() {
+
+  const sideAppBarData = [
+    {
+      url: "https://iu-people.slack.com",
+      img: `${process.env.PUBLIC_URL}/img/slack-icon.svg`
+    },
+    {
+      url: "https://gmail.com",
+      img: `${process.env.PUBLIC_URL}/img/gmail-icon.svg`
+    }
+  ]
+
   return (
-    <div>
-      <header className='flex gap-4 items-center p-4 text-xl text-slate-800 border-b border-slate-200'>
+    <div className='min-h-screen bg-slate-50'>
+      <header className='sticky top-0 left-0 z-50 flex gap-4 items-center p-4 text-xl text-slate-800 bg-white border-b border-slate-200'>
         <img src={`${process.env.PUBLIC_URL}/img/logo.svg`} className=' w-6 h-6'/> iU Launcher
       </header>
-      <main className='flex'>
-        <div className='flex flex-col gap-2 h-[calc(100vh-61px)] p-2 border-r border-slate-200'>
-          <a href='https://iu-people.slack.com' target='_blank' className='block p-2 rounded hover:bg-slate-100'>
-              <img src={`${process.env.PUBLIC_URL}/img/slack-icon.svg`} alt="" className=' w-8 h-8'/>
-          </a>
-          <a href='https://gmail.com' target='_blank' className='block p-2 rounded hover:bg-slate-100'>
-              <img src={`${process.env.PUBLIC_URL}/img/gmail-icon.svg`} alt="" className=' w-8 h-8'/>
-          </a>
-        </div>
-        <div className='flex gap-4 p-4 flex-wrap flex-1 items-start'>
+      <div>
+        <SideAppBar data={sideAppBarData}/>
+        <div className='grid grid-cols-1 auto-rows-min gap-2 p-4 sm:ml-16 md:grid-cols-2 xl:grid-cols-3'>
           <BigBookmark 
             url="https://unipa.i-u.ac.jp/uprx/"
             icon={`${process.env.PUBLIC_URL}/img/logo.svg`}
@@ -29,7 +33,7 @@ function App() {
             screenshot={`${process.env.PUBLIC_URL}/img/classroom-sc.png`}
             name="Google Classroom"/>
         </div>
-      </main>
+      </div>
     </div>
   );
 }
