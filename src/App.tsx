@@ -26,7 +26,7 @@ function App() {
         <SideAppBar data={sideAppBarData}/>
         <div className='grid grid-cols-1 auto-rows-min gap-2 p-4 sm:ml-16 md:grid-cols-2 xl:grid-cols-3'>
           <BigBookmark 
-            url={window.innerWidth > 640 ? "https://unipa.i-u.ac.jp/uprx/" : "https://unipa.i-u.ac.jp/uprx/pk/pky501/Pky50101.xhtml"}
+            url={window.innerWidth > 640 ? "https://unipa.i-u.ac.jp/uprx/" : "https://unipa.i-u.ac.jp/uprx/up/pk/pky501/Pky50101.xhtml"}
             icon={`${process.env.PUBLIC_URL}/img/logo.svg`}
             screenshot={`${process.env.PUBLIC_URL}/img/unipa-sc.png`}
             name="Unipa iU"/>
